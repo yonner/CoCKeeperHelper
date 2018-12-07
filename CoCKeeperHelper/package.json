@@ -1,0 +1,10 @@
+{
+  "version": "1.0.0",
+  "name": "cockeeperhelper",
+  "private": true,
+  "devDependencies": {},
+  "dependencies": {
+    "bootstrap": "3.3.7",
+    "popper.js": "1.0.1"
+  }
+}

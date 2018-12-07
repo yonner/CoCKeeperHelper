@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link href="~/../node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <!--script src="~/../node_modules/popper.js/dist/popper.min.js"></script-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <meta charset="utf-8" />
+    <title></title>
+
+</head>
+<body>
+
+<div>This is index.html</div>
+<div align="center">
+    <button type="button" class="btn btn-success">Success</button>
+</div>
+<div class="container" align="center">
+    <img src="images/node.jpg" alt="A node" data-toggle="popover" data-placement="bottom" title="<b>Node</b>" />
+    <img src="images/path.jpg" alt="A path" />
+    <img src="images/path.jpg" alt="A path" />
+    <img src="images/node.jpg" alt="A node" />
+    <img src="images/path.jpg" alt="A path" />
+    <img src="images/path.jpg" alt="A path" />
+    <img src="images/node.jpg" alt="A node" />
+    <img src="images/path.jpg" alt="A path" />
+    <img src="images/path.jpg" alt="A path" />
+    <img src="images/node.jpg" alt="A node" />
+    <img src="images/path.jpg" alt="A path" />
+    <img src="images/path.jpg" alt="A path" />
+    <img src="images/node.jpg" alt="A node" />
+    <img src="images/path.jpg" alt="A path" />
+    <img src="images/path.jpg" alt="A path" />
+    <img src="images/node.jpg" alt="A node" />
+</div>
+
+<div class="container" align="center">
+    <img src="images/char.jpg" alt="Farmer" data-toggle="popover" data-placement="bottom" title="<b>Character</b>"  data-content="Farmer"/>
+    <img src="images/blank.jpg" alt="" />
+    <img src="images/blank.jpg" alt="" />
+    <img src="images/blank.jpg" alt="A node" />
+    <img src="images/blank.jpg" alt="A path" />
+    <img src="images/blank.jpg" alt="A path" />
+    <img src="images/blank.jpg" alt="" />
+    <img src="images/blank.jpg" alt="" />
+    <img src="images/blank.jpg" alt="" />
+    <img src="images/char.jpg" alt="Harvey" data-toggle="popover" data-placement="bottom" title="<b>Character</b>"  data-content="Harvey"/>
+    <img src="images/blank.jpg" alt="" />
+    <img src="images/blank.jpg" alt="" />
+    <img src="images/blank.jpg" alt="" />
+    <img src="images/blank.jpg" alt="" />
+    <img src="images/blank.jpg" alt="" />
+    <img src="images/blank.jpg" alt="" />
+</div>
+
+<ul id="popover-content" class="list-group" style="display: none">
+    <a href="#" class="list-group-item">Move to here</a>
+    <a href="#" class="list-group-item">Add Hazard</a>
+    <a href="#" class="list-group-item">Delete Hazard</a>
+    <a href="./chase/path" class="list-group-item">View Matrix (path)</a>
+    <a href="./chase/index" class="list-group-item">View Matrix (actors)</a>
+</ul>
+
+<script>
+    $(document).ready(function() {
+        $('[data-toggle="popover"]').popover({
+            html: true,
+            content: function() {
+                return $('#popover-content').html();
+            }
+        });
+    });
+</script>
+</body>
+</html>
