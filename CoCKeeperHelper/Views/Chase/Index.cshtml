@@ -1,7 +1,50 @@
-﻿<html xmlns="http://www.w3.org/1999/xhtml">
+﻿@using CoCKeeperHelper.Data
+@model CoCKeeperHelper.Data.CharacterPositions
+
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title></title>
 </head>
 <body>
+    <h1></h1>
+    @{
+        @Html.Raw(@"<div class=""container"" align=""center"">");
+
+        for (int i = 0; i < (int)this.ViewData["Nodes"] - 1; i++)
+        {
+            <img src="../images/node.jpg" alt="A node" data-toggle="popover" data-placement="bottom" title="<b>Node</b>" />
+            <img src="../images/path.jpg" alt="A path" />
+            <img src="../images/path.jpg" alt="A path" />
+        }
+        <img src="../images/node.jpg" alt="A node" data-toggle="popover" data-placement="bottom" title="<b>Node</b>" />
+
+        @Html.Raw("</div>");
+
+        @Html.Raw(@"<div class=""container"" align=""center"">");
+
+        for (int i = 0; i < (int)this.ViewData["Nodes"] - 1; i++)
+        {
+
+            bool isCharacter = false;
+            foreach (var c in Model)
+            {
+                if (c.Position == i)
+                {
+                    <img src="../images/char.jpg" alt="Farmer" data-toggle="popover" data-placement="bottom" title="<b>c</b>" data-content="Farmer" />
+                    isCharacter = true;
+                    break;
+                }
+            }
+            if (!isCharacter)
+            {
+                <img src="../images/blank.jpg" alt="" />
+            }
+
+            <img src="../images/blank.jpg" alt="" />
+            <img src="../images/blank.jpg" alt="A path" />
+        }
+        <img src="../images/blank.jpg" alt="" />
+        @Html.Raw("</div>");
+    }
 </body>
 </html>

@@ -29,26 +29,25 @@ namespace CoCKeeperHelper.Data
     public class Character : PlaceHolder
     {
         public string Name { get; set; }
+
+        public int ID { get; set; }
     }
-    public class CharacterPositions : List<PlaceHolder>
+
+    public class CharacterPosition
+    {
+        public int CharacterID { get; set; }
+        public int Position { get; set; }
+    }
+
+    public class CharacterPositions : List<CharacterPosition>
     {
         public CharacterPositions()
         {
-            var character1 = new Character() { Name = "Farmer" };
+            var character1 = new CharacterPosition() { CharacterID = 1, Position = 0};
             this.Add(character1);
 
-            var none = new None();
-            this.Add(none);
-
-            this.Add(none);
-
-            var character2 = new Character() { Name = "Harvey" };
-            this.Add(character2);
-
-            this.Add(none);
-
-
-            this.Add(none);
+            var character2 = new CharacterPosition() { CharacterID = 2, Position = 3 };
+            this.Add(character2);         
         }
 
     }

@@ -7,16 +7,23 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CoCKeeperHelper.Controllers
 {
+
     [Route("[controller]")]
     public class ChaseController : Controller
     {
+        private int nodes = 6; 
+
+
         [Route("index")]
         public IActionResult Index()
         {
             CharacterPositions cp = new CharacterPositions();
 
+            //ViewBag.Name =
+            ViewData["Nodes"] = nodes;
+
             // return new ObjectResult(cp);
-            return View();
+            return View(cp);
         }
 
         [Route("path")]
