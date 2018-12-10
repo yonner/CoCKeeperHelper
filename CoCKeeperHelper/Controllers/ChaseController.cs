@@ -15,7 +15,7 @@ namespace CoCKeeperHelper.Controllers
         {
             CharacterPositions cp = new CharacterPositions();
 
-            //return new ObjectResult(cp);
+            // return new ObjectResult(cp);
             return View();
         }
 
