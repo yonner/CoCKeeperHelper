@@ -1,5 +1,5 @@
 ﻿@using CoCKeeperHelper.Data
-@model CoCKeeperHelper.Data.CharacterPositions
+@model CoCKeeperHelper.Models.ActorsAndPositions
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -10,7 +10,7 @@
     @{
         @Html.Raw(@"<div class=""container"" align=""center"">");
 
-        for (int i = 0; i < (int)this.ViewData["Nodes"] - 1; i++)
+        for (int i = 0; i < Model.Nodes - 1; i++)
         {
             <img src="../images/node.jpg" alt="A node" data-toggle="popover" data-placement="bottom" title="<b>Node</b>" />
             <img src="../images/path.jpg" alt="A path" />
@@ -22,15 +22,17 @@
 
         @Html.Raw(@"<div class=""container"" align=""center"">");
 
-        for (int i = 0; i < (int)this.ViewData["Nodes"] - 1; i++)
+        for (int i = 0; i < Model.Nodes - 1; i++)
         {
 
             bool isCharacter = false;
-            foreach (var c in Model)
+            foreach (var c in Model.ActorPositions)
             {
                 if (c.Position == i)
                 {
-                    <img src="../images/char.jpg" alt="Farmer" data-toggle="popover" data-placement="bottom" title="<b>c</b>" data-content="Farmer" />
+                    var actorName = Model.Actors.FirstOrDefault(p => p.ID == c.CharacterID).Name;
+
+                    <img src="../images/char.jpg" alt="temp" data-toggle="popover" data-placement="bottom" title="<b>@actorName</b>" data-content="temp" />
                     isCharacter = true;
                     break;
                 }
@@ -45,6 +47,17 @@
         }
         <img src="../images/blank.jpg" alt="" />
         @Html.Raw("</div>");
+
+        <form action="Assign" method="post">
+            
+            @Html.DropDownList("ActorIdBeingAssignedToNode", Model.Actors.Select( x=>new SelectListItem(){Value = x.ID.ToString(), Text=x.Name}))
+            
+            <input asp-for="NodeActorIsBeingAssignedToo" />
+
+            <input type="submit" name="save" value="Assign" />
+        </form>
+
+        <a href="../actors/index">Actors</a>
     }
 </body>
 </html>

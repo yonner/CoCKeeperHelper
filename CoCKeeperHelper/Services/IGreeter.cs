@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Configuration;
 
-namespace CoCKeeperHelper
+namespace CoCKeeperHelper.Services
 {
     public interface IGreeter
     {

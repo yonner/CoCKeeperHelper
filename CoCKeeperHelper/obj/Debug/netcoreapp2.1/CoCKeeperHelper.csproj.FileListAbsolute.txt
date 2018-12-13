@@ -3,7 +3,6 @@ C:\Development\CoCKeeperHelper\CoCKeeperHelper\bin\Debug\netcoreapp2.1\CoCKeeper
 C:\Development\CoCKeeperHelper\CoCKeeperHelper\bin\Debug\netcoreapp2.1\CoCKeeperHelper.runtimeconfig.dev.json
 C:\Development\CoCKeeperHelper\CoCKeeperHelper\bin\Debug\netcoreapp2.1\CoCKeeperHelper.dll
 C:\Development\CoCKeeperHelper\CoCKeeperHelper\bin\Debug\netcoreapp2.1\CoCKeeperHelper.pdb
-C:\Development\CoCKeeperHelper\CoCKeeperHelper\obj\Debug\netcoreapp2.1\CoCKeeperHelper.csprojAssemblyReference.cache
 C:\Development\CoCKeeperHelper\CoCKeeperHelper\obj\Debug\netcoreapp2.1\CoCKeeperHelper.csproj.CoreCompileInputs.cache
 C:\Development\CoCKeeperHelper\CoCKeeperHelper\obj\Debug\netcoreapp2.1\CoCKeeperHelper.RazorAssemblyInfo.cache
 C:\Development\CoCKeeperHelper\CoCKeeperHelper\obj\Debug\netcoreapp2.1\CoCKeeperHelper.RazorAssemblyInfo.cs
@@ -21,3 +20,7 @@ C:\Development\CoCKeeperHelper\CoCKeeperHelper\obj\Debug\netcoreapp2.1\Razor\Vie
 C:\Development\CoCKeeperHelper\CoCKeeperHelper\obj\Debug\netcoreapp2.1\CoCKeeperHelper.RazorTargetAssemblyInfo.cs
 C:\Development\CoCKeeperHelper\CoCKeeperHelper\obj\Debug\netcoreapp2.1\CoCKeeperHelper.Views.pdb
 C:\Development\CoCKeeperHelper\CoCKeeperHelper\obj\Debug\netcoreapp2.1\CoCKeeperHelper.csproj.CopyComplete
+C:\Development\CoCKeeperHelper\CoCKeeperHelper\obj\Debug\netcoreapp2.1\CoCKeeperHelper.csprojAssemblyReference.cache
+C:\Development\CoCKeeperHelper\CoCKeeperHelper\obj\Debug\netcoreapp2.1\Razor\Views\Actors\Index.g.cshtml.cs
+C:\Development\CoCKeeperHelper\CoCKeeperHelper\obj\Debug\netcoreapp2.1\Razor\Views\Actors\Create.g.cshtml.cs
+C:\Development\CoCKeeperHelper\CoCKeeperHelper\obj\Debug\netcoreapp2.1\Razor\Views\_ViewImports.g.cshtml.cs

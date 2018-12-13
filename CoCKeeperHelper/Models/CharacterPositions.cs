@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -26,6 +27,7 @@ namespace CoCKeeperHelper.Data
 
     }
 
+    // Entity Model
     public class Character : PlaceHolder
     {
         public string Name { get; set; }
@@ -33,6 +35,7 @@ namespace CoCKeeperHelper.Data
         public int ID { get; set; }
     }
 
+    // Entity Model
     public class CharacterPosition
     {
         public int CharacterID { get; set; }
