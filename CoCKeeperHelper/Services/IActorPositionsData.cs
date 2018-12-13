@@ -10,5 +10,6 @@ namespace CoCKeeperHelper.Services
     {
         IEnumerable<CharacterPosition> GetAll();
 
+        CharacterPosition Add(CharacterPosition pos);
     }
 }

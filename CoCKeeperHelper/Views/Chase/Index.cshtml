@@ -48,15 +48,17 @@
         <img src="../images/blank.jpg" alt="" />
         @Html.Raw("</div>");
 
+        <div class="container">
+
         <form action="Assign" method="post">
-            
-            @Html.DropDownList("ActorIdBeingAssignedToNode", Model.Actors.Select( x=>new SelectListItem(){Value = x.ID.ToString(), Text=x.Name}))
-            
+
+            @Html.DropDownList("ActorIdBeingAssignedToNode", Model.Actors.Select(x => new SelectListItem() { Value = x.ID.ToString(), Text = x.Name }))
+
             <input asp-for="NodeActorIsBeingAssignedToo" />
 
             <input type="submit" name="save" value="Assign" />
         </form>
-
+        </div>
         <a href="../actors/index">Actors</a>
     }
 </body>

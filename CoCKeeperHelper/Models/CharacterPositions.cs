@@ -40,6 +40,7 @@ namespace CoCKeeperHelper.Data
     {
         public int CharacterID { get; set; }
         public int Position { get; set; }
+        public int ID { get; set; }
     }
 
     public class CharacterPositions : List<CharacterPosition>

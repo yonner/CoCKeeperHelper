@@ -57,8 +57,16 @@ namespace CoCKeeperHelper.Controllers
         [Route("Assign")]
         public IActionResult Assign(ActorsAndPositions aandp)
         {
-            _actorPositions.GetAll().FirstOrDefault(x => x.CharacterID == aandp.ActorIdBeingAssignedToNode).Position =
-                aandp.NodeActorIsBeingAssignedToo;
+            var positionToChange = _actorPositions.GetAll()
+                .FirstOrDefault(x => x.CharacterID == aandp.ActorIdBeingAssignedToNode);
+
+            if (positionToChange == null)
+            {
+                positionToChange = new CharacterPosition() {CharacterID = aandp.ActorIdBeingAssignedToNode};
+                _actorPositions.Add(positionToChange);
+            }
+
+            positionToChange.Position = aandp.NodeActorIsBeingAssignedToo;
 
             aandp.Nodes = nodes;
 

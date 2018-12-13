@@ -22,8 +22,9 @@ namespace CoCKeeperHelper
             // 1 instance of the service
             services.AddSingleton<IGreeter, Greeter>();
             // add transient (create when needed), add scoped (create within http scope)
-            services.AddScoped<IActorPositionsData, InMemoryActorPositions>();
- //          services.AddScoped<IActorsData, InMemoryActorData>();
+//          services.AddScoped<IActorPositionsData, InMemoryActorPositions>();
+//          services.AddScoped<IActorsData, InMemoryActorData>();
+            services.AddSingleton<IActorPositionsData, InMemoryActorPositions>();
             services.AddSingleton<IActorsData, InMemoryActorData>();
             // register mvc service
             services.AddMvc();
