@@ -8,3 +8,5 @@
 *.cache
 /CoCKeeperHelper/bin/Debug/netcoreapp2.1/CoCKeeperHelper.*
 /CoCKeeperHelper/obj/Debug/netcoreapp2.1/CoCKeeperHelper.*
+/CoCKeeperHelper/obj/Debug/netcoreapp2.1
+/CoCKeeperHelper/obj
