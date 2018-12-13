@@ -1,1 +1,10 @@
 .vs/
+/CoCKeeperHelper/obj/Release/netcoreapp2.1/CoCKeeperHelper.RazorAssemblyInfo.cs
+/CoCKeeperHelper/obj/Release/netcoreapp2.1/CoCKeeperHelper.RazorAssemblyInfo.cache
+/CoCKeeperHelper/obj/Release/netcoreapp2.1/CoCKeeperHelper.csproj.CoreCompileInputs.cache
+/CoCKeeperHelper/obj/Release/netcoreapp2.1/CoCKeeperHelper.assets.cache
+/CoCKeeperHelper/obj/Release/netcoreapp2.1/CoCKeeperHelper.AssemblyInfoInputs.cache
+/CoCKeeperHelper/obj/Release/netcoreapp2.1/CoCKeeperHelper.AssemblyInfo.cs
+*.cache
+/CoCKeeperHelper/bin/Debug/netcoreapp2.1/CoCKeeperHelper.*
+/CoCKeeperHelper/obj/Debug/netcoreapp2.1/CoCKeeperHelper.*
