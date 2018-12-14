@@ -1,18 +1,65 @@
 ﻿@using CoCKeeperHelper.Data
 @model CoCKeeperHelper.Data.Character
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link href="~/../node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <title></title>
 </head>
 <body>
 
-<h1>Create</h1>
-
-<form method="post">
-    <input asp-for="Name" />
+    <h1>Create</h1>
     
-    <input type="submit" name="save" value="Save"/>
-</form>
+    <div class="container" style="width: 20%">
+        
+    </div>
+
+<a href="#" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Open Modal</a>
+
+<div class="modal fade" id="myModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <a href="#" class="close" data-dismiss="modal">&times;</a>
+                <h3 class="modal-title">header</h3>
+            </div>
+            <div class="modal-body">
+                <form id="myForm">
+                    @*<input asp-for="Name" class="form-control" />*@            
+                    @*<input type="submit" name="save" value="Save" class="btn btn-primary" />*@
+                    
+                    @Html.TextBoxFor(model => model.Name, new {@class="form-control", @placeholder = "Name"})
+                </form>
+            </div>
+            <div class="modal-footer">
+                <a href="#" class="btn btn-default" data-dismiss="modal">Cancel</a>
+                @*<a href="#" class="btn btn-success">Submit</a>*@
+                <input type="submit" name="save" value="Save" class="btn btn-success" id="btnSubmit" />
+            </div>
+        </div>
+    </div>
+   
+</div>
+    
+<script>
+    $(document).ready(function() {
+        $("#btnSubmit").click(function() {
+            //
+            var myformdata = $("#myForm").serialize();
+
+            $.ajax({
+                type: "POST",
+                url:"/Actors/CreateIt",
+                data: myformdata,
+                success: function() {
+                    $("#myModal").modal("hide");
+                }
+            })
+        })
+    })
+</script>
 
 </body>
 </html>

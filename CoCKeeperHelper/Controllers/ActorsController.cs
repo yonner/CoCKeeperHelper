@@ -33,7 +33,7 @@ namespace CoCKeeperHelper.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create(ActorsEditModel newCharacter)
+        public ActionResult CreateIt(ActorsEditModel newCharacter)
         {
             var c = new Character()
             {
