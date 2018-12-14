@@ -45,7 +45,24 @@
             <img src="../images/blank.jpg" alt="" />
             <img src="../images/blank.jpg" alt="A path" />
         }
-        <img src="../images/blank.jpg" alt="" />
+
+        bool isfCharacter = false;
+        foreach (var c in Model.ActorPositions)
+        {
+            if (c.Position == Model.Nodes - 1)
+            {
+                var actorName = Model.Actors.FirstOrDefault(p => p.ID == c.CharacterID).Name;
+
+                <img src="../images/char.jpg" alt="temp" data-toggle="popover" data-placement="bottom" title="<b>@actorName</b>" data-content="temp" />
+                isfCharacter = true;
+                break;
+            }
+        }
+        if (!isfCharacter)
+        {
+            <img src="../images/blank.jpg" alt="" />
+        } 
+        
         @Html.Raw("</div>");
 
         <div class="container">
