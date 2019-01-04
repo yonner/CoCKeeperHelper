@@ -1,0 +1,38 @@
+﻿@using CoCKeeperHelper.Data
+@model CoCKeeperHelper.Models.ModifySpeedModel
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <link href="~/../../node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <title></title>
+</head>
+<body>
+
+    <p>The Escape's <b>MOV</b> rate is <b>@Model.EscapeeMov</b></p>
+    <p>The Chaser's <b>MOV</b> rate is <b>@Model.ChaserMov</b></p>
+
+    <p>Now roll the appropraite speed check skill to see who gets a speed modifier, for example <b>CON</b> roll if the chase is on foot or <b>Drive Auto</b> if the chase is using automobiles.</p>
+
+    <!--TODO send all options selected to the contoller then modify the MOV vallues -->
+
+    <div class="container">
+        <p>Once rolled did the Escapee :- </p>
+
+        <form action="Modify" asp-controller="ModifySpeed" method="post">
+            <input type="radio" name="optradio" value="E_RegPass" checked> Regular Pass<br>
+            <input type="radio" name="optradio" value="E_ExtremePass"> Extreme Pass<br>
+            <input type="radio" name="optradio" value="E_Fail"> Fail
+
+            <p>Did the Chaser:- </p>
+        </form>
+    </div>
+    <div class="container">
+        <form action="Modify" asp-controller="ModifySpeed" method="post">
+            <input type="radio" name="optradio" value="C_RegPass" checked> Regular Pass<br>
+            <input type="radio" name="optradio" value="C_ExtremePass"> Extreme Pass<br>
+            <input type="radio" name="optradio" value="C_Fail"> Fail <br>
+            <input type="submit" name="Finished" class="btn btn-success" value="Finished" />
+        </form>
+    </div>
+</body>
+</html>
