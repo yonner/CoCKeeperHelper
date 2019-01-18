@@ -1,0 +1,34 @@
+﻿
+@using CoCKeeperHelper.Data
+@model CoCKeeperHelper.Models.ChaseSpeeds
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <link href="~/../../node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+
+    <form action="Assign" method="post">
+        <p>
+            <span class="input-group-btn">
+                <div class="input-group">
+                    <label for="ChaserMov">Chasers MOV speed</label>
+                    <input asp-for="ChaserMov" class="form-control" />
+                </div>
+                <div class="input-group">
+                    <label for="EscapeeMov">Escapee MOV speed</label>
+                    <input asp-for="EscapeeMov" class="form-control" />
+                </div>
+            </span>
+            <input type="submit" name="Finished" class="btn btn-success" value="Finished" />
+        </p>
+    </form>
+
+</body>
+</html>
