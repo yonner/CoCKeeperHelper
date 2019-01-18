@@ -1,4 +1,5 @@
 ﻿@using CoCKeeperHelper.Data
+@using CoCKeeperHelper.Models
 @model CoCKeeperHelper.Models.ModifySpeedModel
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -11,28 +12,31 @@
     <p>The Escape's <b>MOV</b> rate is <b>@Model.EscapeeMov</b></p>
     <p>The Chaser's <b>MOV</b> rate is <b>@Model.ChaserMov</b></p>
 
-    <p>Now roll the appropraite speed check skill to see who gets a speed modifier, for example <b>CON</b> roll if the chase is on foot or <b>Drive Auto</b> if the chase is using automobiles.</p>
+    <p>Now roll the appropraite speed check skill to see who gets a speed modifier, for example <b>CON</b> roll if the chaser/escapee is on foot or <b>Drive Auto</b> if the chaser/escapee are using automobiles.</p>
 
-    <!--TODO send all options selected to the contoller then modify the MOV vallues -->
-
+    <!--TODO send all options selected to the contoller then modify the MOV values -->
     <div class="container">
         <p>Once rolled did the Escapee :- </p>
 
-        <form action="Modify" asp-controller="ModifySpeed" method="post">
-            <input type="radio" name="optradio" value="E_RegPass" checked> Regular Pass<br>
-            <input type="radio" name="optradio" value="E_ExtremePass"> Extreme Pass<br>
-            <input type="radio" name="optradio" value="E_Fail"> Fail
-
+        @using (Html.BeginForm("Modify", "ModifySpeed"))
+        {
+            <fieldset id="group1">
+                @Html.RadioButtonFor(model => model.EscapeeRoll, PassType.Regular, new { @checked = true }) Regular Pass <br>
+                @Html.RadioButtonFor(model => model.EscapeeRoll, PassType.Extreme) Extreme Pass <br>
+                @Html.RadioButtonFor(model => model.EscapeeRoll, PassType.Fail) Fail
+            </fieldset>
             <p>Did the Chaser:- </p>
-        </form>
-    </div>
-    <div class="container">
-        <form action="Modify" asp-controller="ModifySpeed" method="post">
-            <input type="radio" name="optradio" value="C_RegPass" checked> Regular Pass<br>
-            <input type="radio" name="optradio" value="C_ExtremePass"> Extreme Pass<br>
-            <input type="radio" name="optradio" value="C_Fail"> Fail <br>
+            <fieldset id="group2">
+                @Html.RadioButtonFor(model => model.ChaserRoll, PassType.Regular, new { @checked = true }) Regular Pass <br>
+                @Html.RadioButtonFor(model => model.ChaserRoll, PassType.Extreme) Extreme Pass <br>
+                @Html.RadioButtonFor(model => model.ChaserRoll, PassType.Fail) Fail
+            </fieldset>
+
+            <input asp-for="ChaserMov" class="form-control" type ="hidden"/>
+            <input asp-for="EscapeeMov" class="form-control" type ="hidden"/>
+
             <input type="submit" name="Finished" class="btn btn-success" value="Finished" />
-        </form>
+        }
     </div>
 </body>
 </html>

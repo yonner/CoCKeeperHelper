@@ -88,7 +88,8 @@ namespace CoCKeeperHelper
                 // mime type
                 context.Response.ContentType = "text/plain";
                 //await context.Response.WriteAsync($"{greeting}");
-                await context.Response.WriteAsync($"Not Found");
+                //await context.Response.WriteAsync($"Not Found");
+                await context.Response.WriteAsync($"Speed/Index");
             });
         }
 
